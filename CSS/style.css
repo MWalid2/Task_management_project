@@ -1,0 +1,419 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #2e4a2b; /* Couleur de fond plus foncée */
+    color: #fff;
+    border-bottom: 2px solid #8bc34a; /* Bordure moderne */
+}
+
+.u-name {
+    font-size: 20px;
+    padding-left: 17px;
+}
+
+.u-name b {
+    color: #fff; /* Vert clair */
+}
+
+.header i {
+    font-size: 30px;
+    cursor: pointer;
+    color: #8bc34a;
+    transition: color 0.3s; /* Transition pour un effet doux */
+}
+
+.header .notification {
+    position: relative;
+    cursor: pointer;
+}
+
+.header .notification span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #c80000;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.header .notification:hover i {
+    color: #8bc34a; /* Vert clair */
+}
+
+.notification-bar {
+    display: none;
+    width: 90%;
+    max-width: 300px;
+    position: absolute;
+    right: 0;
+    background: #f0f0f0; /* Couleur de fond plus claire */
+    padding: 10px; /* Augmentation du padding */
+    border: 1px solid #2e4a2b; /* Couleur de bordure correspondante */
+    border-radius: 5px; /* Bordures arrondies */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.notification-bar ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.notification-bar ul li a {
+    text-decoration: none;
+    color: #2e4a2b; /* Couleur de texte plus sombre */
+}
+
+.notification-bar ul li:nth-child(even) {
+    background: #e6f9e6; /* Couleur de fond alternée */
+}
+
+.open-notification {
+    display: block;
+}
+
+.user-p {
+    text-align: center;
+    padding: 20px; /* Augmentation du padding */
+}
+
+.user-p img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.user-p h4 {
+    color: #ccc;
+    padding: 5px 0;
+}
+
+.side-bar {
+    width: 300px;
+    background: #2e4a2b; /* Couleur de fond de la barre latérale */
+    min-height: 100vh;
+    transition: 500ms width;
+    border-right: 2px solid #8bc34a; /* Bordure moderne */
+}
+
+.body {
+    display: flex;
+    width: 100%; /* Élargir la zone de contenu */
+}
+
+.side-bar ul {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.side-bar ul li {
+    font-size: 16px;
+    padding: 15px 20px; /* Augmentation du padding */
+    transition: background 0.3s; /* Transition pour un effet doux */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.side-bar ul li:hover {
+    background: #8bc34a; /* Vert clair sur hover */
+}
+
+.side-bar ul li a {
+    text-decoration: none;
+    color: #eee;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.side-bar .active a {
+    color: #8bc34a !important; /* Vert clair pour l'élément actif */
+}
+
+.side-bar .active a i {
+    color: #8bc34a !important;
+}
+
+.side-bar ul .active:hover {
+    background: transparent;
+}
+
+.side-bar ul li a i {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 23px;
+}
+
+#navbtn {
+    display: inline-block;
+    margin-left: 70px;
+    font-size: 20px;
+    transition: color 0.3s; /* Transition pour un effet doux */
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked ~ .body .side-bar {
+    width: 60px;
+}
+
+#checkbox:checked ~ .body .side-bar .user-p {
+    visibility: hidden;
+}
+
+#checkbox:checked ~ .body .side-bar a span {
+    display: none;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-body form {
+    max-width: 420px;
+    width: 90%;
+}
+
+.section-1 {
+    padding: 30px;
+    width: 100%; /* Élargir la section */
+    background: #eafaf1; /* Couleur de fond générale */
+    border-radius: 10px; /* Bordures arrondies pour un look moderne */
+}
+
+.section-1 .title {
+    margin-bottom: 10px;
+}
+
+.section-1 .title a {
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 10px;
+    background: #8bc34a; /* Vert clair */
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s; /* Transition pour un effet doux */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .title a:hover {
+    opacity: 0.8; /* Légère diminution de l'opacité sur hover */
+}
+
+.section-1 .title-2 {
+    margin-bottom: 10px;
+}
+
+.section-1 .title-2 .btn {
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 10px;
+    background: #8bc34a; /* Vert clair */
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s; /* Transition pour un effet doux */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .title-2 .btn:hover {
+    opacity: 0.8; /* Légère diminution de l'opacité sur hover */
+}
+
+.section-1 .title-2 a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.main-table {
+    width: 100%; /* Élargir le tableau */
+    margin-top: 30px;
+    border-collapse: collapse; /* Fusionne les bordures */
+    border-radius: 10px; /* Bordures arrondies pour le tableau */
+    overflow: hidden; /* Masquer les débordements pour les coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+}
+
+.main-table th,
+.main-table td {
+    padding: 15px; /* Augmentation du padding */
+    text-align: left; /* Alignement à gauche pour le texte */
+}
+
+.main-table th {
+    background-color: #8bc34a; /* Couleur de fond des en-têtes */
+    color: #fff; /* Couleur du texte des en-têtes */
+    font-weight: bold; /* Gras pour le texte des en-têtes */
+    border-bottom: 2px solid #7ab82e; /* Bordure inférieure pour les en-têtes */
+}
+
+.main-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Couleur de fond pour les lignes paires */
+}
+
+.main-table tr:hover {
+    background-color: #e6f9e6; /* Couleur de fond au survol */
+    transition: background-color 0.3s ease; /* Transition douce pour le survol */
+}
+
+.main-table td {
+    border-bottom: 1px solid #ddd; /* Bordure inférieure pour les cellules */
+}
+
+.delete-btn,
+.edit-btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 15px; /* Ajustement du padding */
+    color: #fff; /* Couleur du texte */
+    border-radius: 5px; /* Bordures arrondies */
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s; /* Transition pour un effet doux */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour les boutons */
+}
+
+.delete-btn {
+    background: #e00051; /* Rouge vif pour la suppression */
+}
+
+.delete-btn:hover {
+    opacity: 0.8; /* Légère diminution de l'opacité sur hover */
+}
+
+.edit-btn {
+    background: #6cbbf8; /* Couleur alternative pour l'édition */
+}
+
+.edit-btn:hover {
+    opacity: 0.8; /* Légère diminution de l'opacité sur hover */
+}
+.form-1 {
+    width: 90%;
+    max-width: 500px;
+}
+
+.input-holder label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-1 {
+    border: 2px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    display: block;
+    transition: border 0.3s; /* Transition pour un effet doux */
+}
+
+.input-1:focus {
+    border-color: #8bc34a; /* Vert clair sur focus */
+}
+
+.danger {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+    justify-content: space-evenly; /* Répartition égale entre les éléments */
+    padding: 20px; /* Ajout de padding autour de la section */
+}
+
+.dashboard .dashboard-item {
+    text-align: center;
+    background-color: #8bc34a; /* Couleur de fond des éléments du tableau de bord */
+    color: #fff;
+    width: 200px; /* Largeur fixe des éléments */
+    padding: 20px 10px; /* Espacement interne */
+    margin: 20px; /* Espacement entre les éléments */
+    border-radius: 8px; /* Bordures arrondies */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions pour l'animation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre initiale */
+}
+
+.dashboard .dashboard-item:hover {
+    transform: translateY(-5px); /* Effet de levée au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+}
+
+.dashboard .dashboard-item i {
+    display: block; /* Affichage en bloc */
+    color: #fff; /* Couleur de l'icône */
+    font-size: 30px; /* Taille de l'icône */
+    margin-bottom: 5px; /* Espacement en bas de l'icône */
+}
+
+.dashboard .dashboard-item span {
+    display: block; /* Affichage en bloc pour le texte */
+    color: #fff; /* Couleur du texte */
+}
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eaf4ea; /* Couleur verte douce */
+    transition: background-color 1.5s ease; /* Transition douce pour le fond */
+}
+
+.login-form {
+    padding: 30px;
+    border-radius: 10px; /* Bordures arrondies */
+    width: 90%;
+    max-width: 400px;
+    background-color: #ffffff; /* Fond blanc pour le formulaire */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre pour la zone */
+    transition: background-color 1.5s ease; /* Transition douce pour la zone de login */
+}
+
+.login-form .form-label {
+    font-weight: bold;
+}
+
+.login-form input {
+    margin-bottom: 15px;
+}
+
+.login-form .btn {
+    width: 100%; /* Largeur complète du bouton */
+    background: #2e4a2b; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte */
+    border: none; /* Sans bordure */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px; /* Bordures arrondies */
+    transition: background 0.3s; /* Transition pour le hover */
+}
+
+.login-form .btn:hover {
+    background: #216520; /* Couleur plus foncée au hover */
+}
+
